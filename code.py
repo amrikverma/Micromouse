@@ -6,9 +6,9 @@ import neopixel
 import rotaryio
 import pwmio
 from analogio import AnalogIn
+
 # adc 
-l_adc = analogio.AnalogIn(board.GP28)
-#"""TODO call AnalogIn on GP28"""
+l_adc = AnalogIn(board.GP28)
 
 # emitter 
 l_en = digitalio.DigitalInOut(board.GP7)
@@ -25,25 +25,20 @@ lir_b = digitalio.DigitalInOut(board.GP6)
 lir_b.direction  = digitalio.Direction.OUTPUT
 lir_b.drive_mode = digitalio.DriveMode.OPEN_DRAIN
 lir_b.value = True
-# from ds28e05  import DS28E05
-from irsensor import IRSensors
-import adafruit_motor.motor as motor
 
 
 """ Main """
 
 if __name__ == "__main__":
-    # Interrupt - Lab 3
-    enc = rotaryio.IncrementalEncoder(board.GP12, board.GP13)
 
     while True:
-        l_en.value = True
-        lir_a.value = False
+        l_en.value = True 
+        lir_a.value = False # enable sensor
         time.sleep(0.001)
 
-        print("l_adc.value:", l_adc.value, end = " ")
+        print(l_adc.value, end = " ")
 
-        lir_a.value = True
+        lir_a.value = True # disable sensor
 
     # TODO try for lir_b or lir_a whichever one you didnt use instead, enable chosen sensor etc
 

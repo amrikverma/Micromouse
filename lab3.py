@@ -1,4 +1,10 @@
+# from ds28e05  import DS28E05
+# from irsensor import IRSensors
+# import adafruit_motor.motor as motor
 # Polling - Lab 3
+# Interrupt - Lab 3
+    # enc = rotaryio.IncrementalEncoder(board.GP12, board.GP13)
+
     # # a and b Hall effect sensors of left encoder
     # a = digitalio.DigitalInOut(board.GP12)
     # b = digitalio.DigitalInOut(board.GP13)
