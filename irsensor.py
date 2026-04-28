@@ -82,3 +82,4 @@ class IRSensors():
         # Disable IR LEDs (save power)
         for p in [self.l_en, self.c_en, self.r_en]:
             p.value = False
+
